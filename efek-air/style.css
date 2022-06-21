@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vh;
+  background-image: url("gambar.jpg");
+  background-size: cover;
+}
+
+.background .water {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url("gambar\ _transp.png");
+  background-size: cover;
+  filter:url("#turbulence")
+}
