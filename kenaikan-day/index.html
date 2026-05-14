@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenaikan Isa Almasih</title>
+    <style>
+        :root {
+            --sky-blue: #99ccff;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            height: 100vh;
+            background-color: var(--sky-blue);
+            font-family: sans-serif;
+            overflow: hidden;
+            padding-bottom: 300px;
+        }
+
+        .scene {
+            position: relative;
+            width: 300px;
+            height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 20px;
+        }
+
+        #jesus-img {
+            width: 120px;
+            position: absolute;
+            top: 100px;
+            z-index: 2;
+            transition: transform 5s ease-in-out, opacity 5s ease-in-out;
+            will-change: transform;
+        }
+
+        #tanah-img {
+            width: 200px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .ascend {
+            transform: translateY(-600px) scale(0.3);
+            opacity: 0;
+        }
+
+        button {
+            margin-top: 30px;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <div class="scene">
+        <img src="TYK.png" id="jesus-img" alt="Ascension">
+        <img src="tanah.png" id="tanah-img" alt="Ground">
+    </div>
+
+    <button onclick="startAscension()">40 Hari Kemudian</button>
+
+    <script>
+        function startAscension() {
+            const img = document.getElementById('jesus-img');
+            const btn = document.querySelector('button');
+            
+            // Tambahkan class untuk picu animasi CSS
+            img.classList.add('ascend');
+            
+            // Disable tombol setelah diklik
+            btn.disabled = true;
+            btn.innerText = "Terangkat ke Surga";
+            btn.style.opacity = "0.5";
+        }
+    </script>
+
+</body>
+</html>
